@@ -19,11 +19,11 @@ const DevExtremeGrid = ({ states }) => {
       new CustomStore({
         async load() {
           try {
-            const response = await fetch("/api/devextreme/load/employees");
+            const response = await fetch("/api/devextreme/load");
             const result = await response.json();
 
             return {
-              data: result.employees,
+              data: result,
             };
           } catch (err) {
             throw new Error("Employee data loading Error");
