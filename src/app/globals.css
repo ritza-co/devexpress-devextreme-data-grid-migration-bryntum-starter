@@ -9,3 +9,13 @@ html {
   font-family: Poppins, "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
+
+.bryntum-grid-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.b-grid-headers, .b-grid-row {
+  padding: 0 1rem;
+}

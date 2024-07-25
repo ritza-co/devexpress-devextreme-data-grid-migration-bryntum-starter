@@ -10,6 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bryntum/grid": "^6.0.2",
+    "@bryntum/grid-react": "^6.0.2",
     "devextreme": "24.1.3",
     "devextreme-react": "24.1.3",
     "next": "14.2.5",

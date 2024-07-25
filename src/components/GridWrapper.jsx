@@ -1,7 +1,7 @@
 import { State } from "@/models";
 import dynamic from "next/dynamic";
 
-const Grid = dynamic(() => import("./DevExtremeGrid"), {
+const Grid = dynamic(() => import("./BryntumGrid"), {
   ssr: false,
   loading: () => {
     return (
