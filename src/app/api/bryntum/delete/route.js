@@ -1,26 +1,27 @@
-import sequelize from "@/config/database";
-import { Employee } from "@/models";
+import sequelize from '@/config/database';
+import { Employee } from '@/models';
 
 export async function DELETE(request) {
-  const reqBody = await request.json();
-  const { ids } = reqBody;
-  try {
-    await sequelize.transaction(async (t) => {
-      await Employee.destroy({
-        where: { id: ids },
-        transaction: t,
-      });
-    });
+    const reqBody = await request.json();
+    const { ids } = reqBody;
+    try {
+        await sequelize.transaction(async(t) => {
+            await Employee.destroy({
+                where       : { id : ids },
+                transaction : t
+            });
+        });
 
-    return Response.json({ success: true });
-  } catch (error) {
-    const message =
+        return Response.json({ success : true });
+    }
+    catch (error) {
+        const message =
       ids?.length > 1
-        ? "Employees could not be deleted"
-        : "Employee could not be deleted";
+          ? 'Employees could not be deleted'
+          : 'Employee could not be deleted';
 
-    return new Response(message, {
-      status: 500,
-    });
-  }
+        return new Response(message, {
+            status : 500
+        });
+    }
 }
